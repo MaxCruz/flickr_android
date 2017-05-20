@@ -31,4 +31,8 @@ dependencies {
     compile "com.android.support:appcompat-v7:$support_library_version"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     testCompile "junit:junit:$junit_version"
+    compile "io.reactivex.rxjava2:rxjava:$rx_java_version"
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
 }
