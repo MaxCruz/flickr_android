@@ -1,4 +1,4 @@
-package com.example.max.flickr;
+package com.example.data;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.max.flickr", appContext.getPackageName());
+        assertEquals("com.example.data.test", appContext.getPackageName());
     }
 }

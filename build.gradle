@@ -3,7 +3,7 @@ buildscript {
 
     ext {
         // Application
-        application_id = 'com.example.max.flickr'
+        application_id = 'com.example.flickr'
         version_code = 1
         version_name = '1.0'
         compile_sdk_version = 25
