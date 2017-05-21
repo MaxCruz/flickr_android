@@ -23,7 +23,7 @@ class DetailRepositoryTest {
     }
 
     @Test
-    fun shouldGetRecentPhotos() {
+    fun shouldGetPhotoInfo() {
         val observer = repository.getPhotoInfo("33946536664").test()
         observer.awaitTerminalEvent()
         observer.assertNoErrors()

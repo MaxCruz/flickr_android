@@ -27,10 +27,11 @@ class FlickrServiceTest {
         val observer = service.getRecent(10, 1).test()
         observer.awaitTerminalEvent()
         observer.assertNoErrors()
-        observer.assertValue { request ->
-            request is RequestPhotosDTO && request.status == StatusDTO.OK
+        observer.assertValue { response -> response.code() == 200 }
+        observer.assertValue { response ->
+            val requestPhotos = response.body()
+            requestPhotos is RequestPhotosDTO && requestPhotos.status == StatusDTO.OK
         }
-        observer.assertValue { (photosPage) -> photosPage.photos.isNotEmpty() }
     }
 
     @Test
@@ -38,10 +39,11 @@ class FlickrServiceTest {
         val observer = service.getSizes("33943238154").test()
         observer.awaitTerminalEvent()
         observer.assertNoErrors()
-        observer.assertValue { request ->
-            request is RequestSizesDTO && request.status == StatusDTO.OK
+        observer.assertValue { response -> response.code() == 200 }
+        observer.assertValue { response ->
+            val requestSizes = response.body()
+            requestSizes is RequestSizesDTO && requestSizes.status == StatusDTO.OK
         }
-        observer.assertValue { (sizes) -> sizes.size.isNotEmpty() }
     }
 
     @Test
@@ -49,8 +51,10 @@ class FlickrServiceTest {
         val observer = service.getInfo("33943238154").test()
         observer.awaitTerminalEvent()
         observer.assertNoErrors()
-        observer.assertValue { request ->
-            request is RequestPhotoInfoDTO && request.status == StatusDTO.OK
+        observer.assertValue { response -> response.code() == 200 }
+        observer.assertValue { response ->
+            val requestPhotoInfo = response.body()
+            requestPhotoInfo is RequestPhotoInfoDTO && requestPhotoInfo.status == StatusDTO.OK
         }
     }
 
@@ -59,10 +63,11 @@ class FlickrServiceTest {
         val observer = service.search(10, 1, "dog").test()
         observer.awaitTerminalEvent()
         observer.assertNoErrors()
-        observer.assertValue { request ->
-            request is RequestPhotosDTO && request.status == StatusDTO.OK
+        observer.assertValue { response -> response.code() == 200 }
+        observer.assertValue { response ->
+            val requestPhotos = response.body()
+            requestPhotos is RequestPhotosDTO && requestPhotos.status == StatusDTO.OK
         }
-        observer.assertValue { (photosPage) -> photosPage.photos.isNotEmpty() }
     }
 
 }

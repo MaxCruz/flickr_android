@@ -11,7 +11,7 @@ data class RequestPhotoInfoDTO(
         val photoInfo: PhotoInfoDTO,
         @SerializedName("stat")
         val status: StatusDTO,
-        @SerializedName("code")
-        val code: Int
+        @SerializedName("message")
+        val message: String
 
 )

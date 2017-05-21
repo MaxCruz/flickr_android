@@ -5,6 +5,7 @@ import com.example.data.dto.RequestPhotoInfoDTO
 import com.example.data.dto.RequestPhotosDTO
 import com.example.data.dto.RequestSizesDTO
 import io.reactivex.Single
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 import retrofit2.http.QueryMap
@@ -18,9 +19,9 @@ interface FlickrService {
 
         val ENDPOINT = "https://api.flickr.com/services/"
         val DEFAULT_OPTIONS = mapOf(
-                Pair("api_key", BuildConfig.FLICKR_KEY),
                 Pair("format", "json"),
-                Pair("nojsoncallback", "1")
+                Pair("nojsoncallback", "1"),
+                Pair("api_key", BuildConfig.FLICKR_KEY)
         )
 
     }
@@ -31,21 +32,21 @@ interface FlickrService {
             @Query("page") page: Int,
             @Query("method") method: String = "flickr.photos.getRecent",
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
-    ): Single<RequestPhotosDTO>
+    ): Single<Response<RequestPhotosDTO>>
 
     @GET("rest")
     fun getSizes(
             @Query("photo_id") photoId: String,
             @Query("method") method: String = "flickr.photos.getSizes",
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
-    ): Single<RequestSizesDTO>
+    ): Single<Response<RequestSizesDTO>>
 
     @GET("rest")
     fun getInfo(
             @Query("photo_id") photoId: String,
             @Query("method") method: String = "flickr.photos.getInfo",
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
-    ): Single<RequestPhotoInfoDTO>
+    ): Single<Response<RequestPhotoInfoDTO>>
 
     @GET("rest")
     fun search(
@@ -54,6 +55,6 @@ interface FlickrService {
             @Query("text") text: String,
             @Query("method") method: String = "flickr.photos.search",
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
-    ): Single<RequestPhotosDTO>
+    ): Single<Response<RequestPhotosDTO>>
 
 }
