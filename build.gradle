@@ -30,6 +30,9 @@ buildscript {
 
         // Retrofit
         retrofit_version = '2.3.0'
+
+        // Images
+        glide_version = '4.0.0-RC0'
     }
 
     repositories {
