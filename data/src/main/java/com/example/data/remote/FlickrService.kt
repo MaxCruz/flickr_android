@@ -1,6 +1,7 @@
 package com.example.data.remote
 
 import com.example.data.BuildConfig
+import com.example.data.dto.RequestPhotoInfo
 import com.example.data.dto.RequestPhotos
 import com.example.data.dto.RequestSizes
 import io.reactivex.Single
@@ -39,6 +40,11 @@ interface FlickrService {
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
     ): Single<RequestSizes>
 
-    //flickr.photos.getInfo
+    @GET("rest")
+    fun getInfo(
+            @Query("photo_id") photoId: String,
+            @Query("method") method: String = "flickr.photos.getInfo",
+            @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
+    ): Single<RequestPhotoInfo>
 
 }
