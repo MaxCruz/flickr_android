@@ -1,9 +1,5 @@
 package com.example.data
 
-import com.example.data.dto.RequestPhotoInfoDTO
-import com.example.data.dto.RequestPhotosDTO
-import com.example.data.dto.RequestSizesDTO
-import com.example.data.dto.StatusDTO
 import com.example.data.remote.FlickrService
 import com.example.data.remote.ServiceFactory
 import com.example.data.repository.ListRepository
