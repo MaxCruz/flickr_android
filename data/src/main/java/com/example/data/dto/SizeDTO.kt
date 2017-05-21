@@ -14,7 +14,7 @@ data class SizeDTO(
     val width: String,
     @SerializedName("height")
     val height: String,
-    @SerializedName("url")
-    val url: String
+    @SerializedName("source")
+    val source: String
 
 )
