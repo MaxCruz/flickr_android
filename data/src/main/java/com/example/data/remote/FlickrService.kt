@@ -39,4 +39,6 @@ interface FlickrService {
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
     ): Single<RequestSizes>
 
+    //flickr.photos.getInfo
+
 }
