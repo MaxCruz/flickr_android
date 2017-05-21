@@ -5,10 +5,10 @@ import com.google.gson.annotations.SerializedName
 /**
  * Data class that hold the recent photos
  */
-data class RequestPhotos (
+data class RequestSizes (
 
-        @SerializedName("photos")
-        val photosPage: PhotosPage,
+        @SerializedName("sizes")
+        val photosPage: Sizes,
         @SerializedName("stat")
         val status: Status,
         @SerializedName("code")

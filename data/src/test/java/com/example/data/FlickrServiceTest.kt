@@ -1,7 +1,7 @@
 package com.example.data
 
 import com.example.data.dto.RequestPhotos
-import com.example.data.dto.RequestStatus
+import com.example.data.dto.Status
 import com.example.data.remote.FlickrService
 import com.example.data.remote.ServiceFactory
 import org.junit.Before
@@ -26,7 +26,7 @@ class FlickrServiceTest {
         observer.awaitTerminalEvent()
         observer.assertNoErrors()
         observer.assertValue { request ->
-            request is RequestPhotos && request.status == RequestStatus.OK
+            request is RequestPhotos && request.status == Status.OK
         }
         observer.assertValue { (photosPage) -> photosPage.photos.isNotEmpty() }
     }

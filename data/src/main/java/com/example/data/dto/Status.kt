@@ -5,6 +5,6 @@ import com.google.gson.annotations.SerializedName
 /**
  * Possible response status from the awful Flickr's API
  */
-enum class RequestStatus {
+enum class Status {
     @SerializedName("fail") FAIL, @SerializedName("ok") OK
 }
