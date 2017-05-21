@@ -1,5 +1,6 @@
 package com.example.data
 
+import com.example.data.dto.RequestPhotoInfo
 import com.example.data.dto.RequestPhotos
 import com.example.data.dto.RequestSizes
 import com.example.data.dto.Status
@@ -41,6 +42,16 @@ class FlickrServiceTest {
             request is RequestSizes && request.status == Status.OK
         }
         observer.assertValue { (sizes) -> sizes.size.isNotEmpty() }
+    }
+
+    @Test
+    fun shouldGetPhotoInfo() {
+        val observer = service.getInfo("33943238154").test()
+        observer.awaitTerminalEvent()
+        observer.assertNoErrors()
+        observer.assertValue { request ->
+            request is RequestPhotoInfo && request.status == Status.OK
+        }
     }
 
 }
