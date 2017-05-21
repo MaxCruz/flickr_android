@@ -30,7 +30,7 @@ class FlickrServiceTest {
         observer.assertValue { request ->
             request is RequestPhotosDTO && request.status == StatusDTO.OK
         }
-        observer.assertValue { (photosPage) -> photosPage.photoDTOs.isNotEmpty() }
+        observer.assertValue { (photosPage) -> photosPage.photos.isNotEmpty() }
     }
 
     @Test
@@ -62,7 +62,7 @@ class FlickrServiceTest {
         observer.assertValue { request ->
             request is RequestPhotosDTO && request.status == StatusDTO.OK
         }
-        observer.assertValue { (photosPage) -> photosPage.photoDTOs.isNotEmpty() }
+        observer.assertValue { (photosPage) -> photosPage.photos.isNotEmpty() }
     }
 
 }
