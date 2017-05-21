@@ -22,7 +22,7 @@ class FlickrServiceTest {
 
     @Test
     fun shouldGetRecent() {
-        val observer = service.getRecent("flickr.photos.getRecent", 10, 1).test()
+        val observer = service.getRecent(10, 1).test()
         observer.awaitTerminalEvent()
         observer.assertNoErrors()
         observer.assertValue { request ->

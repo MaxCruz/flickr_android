@@ -25,9 +25,16 @@ interface FlickrService {
 
     @GET("rest")
     fun getRecent(
-            @Query("method") method: String,
             @Query("per_page") perPage: Int,
             @Query("page") page: Int,
+            @Query("method") method: String = "flickr.photos.getRecent",
+            @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
+    ): Single<RequestPhotos>
+
+    @GET("rest")
+    fun getSizes(
+            @Query("photo_id") photoId: String,
+            @Query("method") method: String = "flickr.photos.getSizes",
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
     ): Single<RequestPhotos>
 
