@@ -54,4 +54,15 @@ class FlickrServiceTest {
         }
     }
 
+    @Test
+    fun shouldSearch() {
+        val observer = service.search(10, 1, "dog").test()
+        observer.awaitTerminalEvent()
+        observer.assertNoErrors()
+        observer.assertValue { request ->
+            request is RequestPhotos && request.status == Status.OK
+        }
+        observer.assertValue { (photosPage) -> photosPage.photos.isNotEmpty() }
+    }
+
 }
