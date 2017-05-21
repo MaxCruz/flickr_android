@@ -21,10 +21,6 @@ data class PhotoInfo (
     @SerializedName("dates")
     val dates: Dates,
     @SerializedName("views")
-    val views: String,
-    @SerializedName("notes")
-    val notes: Notes,
-    @SerializedName("tags")
-    val tags: Tags
+    val views: String
 
 )
