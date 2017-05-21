@@ -48,7 +48,7 @@ interface FlickrService {
     ): Single<RequestPhotoInfo>
 
     @GET("rest")
-    fun gsearch(
+    fun search(
             @Query("per_page") perPage: Int,
             @Query("page") page: Int,
             @Query("text") text: String,
