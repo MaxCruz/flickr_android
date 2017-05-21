@@ -2,6 +2,7 @@ package com.example.data.remote
 
 import com.example.data.BuildConfig
 import com.example.data.dto.RequestPhotos
+import com.example.data.dto.RequestSizes
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -36,6 +37,6 @@ interface FlickrService {
             @Query("photo_id") photoId: String,
             @Query("method") method: String = "flickr.photos.getSizes",
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
-    ): Single<RequestPhotos>
+    ): Single<RequestSizes>
 
 }

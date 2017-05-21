@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName
 data class RequestSizes (
 
         @SerializedName("sizes")
-        val photosPage: Sizes,
+        val sizes: Sizes,
         @SerializedName("stat")
         val status: Status,
         @SerializedName("code")
