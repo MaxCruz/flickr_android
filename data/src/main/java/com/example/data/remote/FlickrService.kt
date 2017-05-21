@@ -47,4 +47,13 @@ interface FlickrService {
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
     ): Single<RequestPhotoInfo>
 
+    @GET("rest")
+    fun gsearch(
+            @Query("per_page") perPage: Int,
+            @Query("page") page: Int,
+            @Query("text") text: String,
+            @Query("method") method: String = "flickr.photos.search",
+            @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
+    ): Single<RequestPhotos>
+
 }
