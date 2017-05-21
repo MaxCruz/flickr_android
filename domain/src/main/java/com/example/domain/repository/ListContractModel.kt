@@ -8,7 +8,7 @@ import io.reactivex.Observable
  */
 interface ListContractModel {
 
-    fun getRecentPhotos(page: Int): Observable<List<Photo>>
-    fun searchPhotos(text: String, page: Int): Observable<List<Photo>>
+    fun getRecentPhotos(perPage: Int, page: Int): Observable<Photo>
+    fun searchPhotos(perPage: Int, page: Int, text: String): Observable<Photo>
 
 }
