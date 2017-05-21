@@ -3,14 +3,14 @@ package com.example.data.dto
 import com.google.gson.annotations.SerializedName
 
 /**
- * Data class that hold the photo detail
+ * Data class that hold the different sizes of images
  */
-data class RequestPhotoInfo (
+data class RequestSizesDTO(
 
-        @SerializedName("photo")
-        val photoInfo: PhotoInfo,
+        @SerializedName("sizes")
+        val sizes: SizesDTO,
         @SerializedName("stat")
-        val status: Status,
+        val status: StatusDTO,
         @SerializedName("code")
         val code: Int
 

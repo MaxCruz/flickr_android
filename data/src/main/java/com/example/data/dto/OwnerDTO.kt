@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 /**
  * Owner of a picture
  */
-data class Owner (
+data class OwnerDTO(
 
     @SerializedName("username")
     val userName: String,

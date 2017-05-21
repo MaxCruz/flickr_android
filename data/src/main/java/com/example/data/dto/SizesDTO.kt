@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 /**
  * Image sizes container
  */
-data class Sizes (
+data class SizesDTO(
 
     @SerializedName("size")
-    val size: List<Size>
+    val size: List<SizeDTO>
 
 )

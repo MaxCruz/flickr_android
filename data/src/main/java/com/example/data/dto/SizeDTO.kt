@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 /**
  * Image size representation
  */
-data class Size (
+data class SizeDTO(
 
     @SerializedName("label")
     val label: String,

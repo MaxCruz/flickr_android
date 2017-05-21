@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  * Data class to represent a photo
  */
-data class Photo(
+data class PhotoDTO(
 
         @SerializedName("id")
         val id: String,

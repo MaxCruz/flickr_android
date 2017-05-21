@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  * Common content class
  */
-data class Content (
+data class ContentDTO (
 
         @SerializedName("_content")
         val content: String

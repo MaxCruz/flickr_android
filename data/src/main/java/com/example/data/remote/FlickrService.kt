@@ -1,9 +1,9 @@
 package com.example.data.remote
 
 import com.example.data.BuildConfig
-import com.example.data.dto.RequestPhotoInfo
-import com.example.data.dto.RequestPhotos
-import com.example.data.dto.RequestSizes
+import com.example.data.dto.RequestPhotoInfoDTO
+import com.example.data.dto.RequestPhotosDTO
+import com.example.data.dto.RequestSizesDTO
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -31,21 +31,21 @@ interface FlickrService {
             @Query("page") page: Int,
             @Query("method") method: String = "flickr.photos.getRecent",
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
-    ): Single<RequestPhotos>
+    ): Single<RequestPhotosDTO>
 
     @GET("rest")
     fun getSizes(
             @Query("photo_id") photoId: String,
             @Query("method") method: String = "flickr.photos.getSizes",
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
-    ): Single<RequestSizes>
+    ): Single<RequestSizesDTO>
 
     @GET("rest")
     fun getInfo(
             @Query("photo_id") photoId: String,
             @Query("method") method: String = "flickr.photos.getInfo",
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
-    ): Single<RequestPhotoInfo>
+    ): Single<RequestPhotoInfoDTO>
 
     @GET("rest")
     fun search(
@@ -54,6 +54,6 @@ interface FlickrService {
             @Query("text") text: String,
             @Query("method") method: String = "flickr.photos.search",
             @QueryMap defaultOptions: Map<String, String> = DEFAULT_OPTIONS
-    ): Single<RequestPhotos>
+    ): Single<RequestPhotosDTO>
 
 }

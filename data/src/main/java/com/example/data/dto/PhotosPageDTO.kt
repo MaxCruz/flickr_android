@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  * Pagination object
  */
-data class PhotosPage(
+data class PhotosPageDTO(
 
     @SerializedName("page")
     val page: Int,
@@ -16,6 +16,6 @@ data class PhotosPage(
     @SerializedName("total")
     val total: Int,
     @SerializedName("photo")
-    val photos: List<Photo>
+    val photos: List<PhotoDTO>
 
 )
