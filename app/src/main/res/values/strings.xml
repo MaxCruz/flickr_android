@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Flickr Images</string>
+    <string name="menu_search">Search</string>
+    <string name="detail_description">Description</string>
+    <string name="detail_date_taken">Date Taken</string>
+    <string name="detail_date_published">Date Published</string>
+    <string name="detail_license">License</string>
+    <string name="detail_views">Views</string>
+    <string name="detail_name">Name</string>
+    <string name="detail_user">User</string>
+    <string name="detail_location">Location</string>
+    <string name="detail_error">You don\'t have Internet and the detail information isn\'t saved in cache</string>
+    <string name="detail_title">Title</string>
 </resources>

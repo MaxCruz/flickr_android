@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/imageViewItem"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:ignore="ContentDescription">
+    android:layout_height="wrap_content"
+    android:scaleType="centerCrop"
+    tools:ignore="ContentDescription"
+    android:layout_margin="@dimen/image_min_margin">
 
 </ImageView>
