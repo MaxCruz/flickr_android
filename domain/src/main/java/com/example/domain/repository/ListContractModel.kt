@@ -10,5 +10,8 @@ interface ListContractModel {
 
     fun getRecentPhotos(perPage: Int, page: Int): Single<List<Photo>>
     fun searchPhotos(perPage: Int, page: Int, text: String): Single<List<Photo>>
+    fun saveToLocalStorage(list: List<Photo>)
+    fun clearLocalStorage()
+    fun getLocalEntries(): List<Photo>
 
 }
