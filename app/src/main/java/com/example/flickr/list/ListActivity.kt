@@ -7,9 +7,9 @@ import android.support.design.widget.Snackbar
 import android.support.v4.view.MenuItemCompat
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
-import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.Menu
 import com.example.domain.models.Photo
 import com.example.flickr.FlickrApplication
@@ -81,8 +81,7 @@ class ListActivity : AppCompatActivity(), ListContract.View, SwipeRefreshLayout.
     }
 
     private fun setupRecyclerView() {
-        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        layoutManager.gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS
+        val layoutManager = GridLayoutManager(this, 2)
         imageList.layoutManager = layoutManager
         imageList.adapter = adapter
         presenter.loadEntries(1)
