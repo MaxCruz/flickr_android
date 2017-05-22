@@ -16,7 +16,11 @@ class GetRecentPhotos(val listModel: ListContractModel, subscribeOn: Scheduler, 
 
     override fun executeUseCase(values: Input?): Observable<Output> {
         if (values == null) return Observable.error(InvalidParameterException())
-        return listModel.getRecentPhotos(PER_PAGE, values.page).toObservable().map(::Output)
+        return listModel.getRecentPhotos(PER_PAGE, values.page)
+                .toObservable()
+                .doOnNext { listModel.saveToLocalStorage(it) }
+                .onErrorReturn { listModel.getLocalEntries() }
+                .map(::Output)
     }
 
     data class Input(val page: Int): UseCase.Input
