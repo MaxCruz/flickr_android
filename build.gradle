@@ -20,6 +20,7 @@ buildscript {
         // Tests
         espresso_version = '2.2.2'
         junit_version = '4.12'
+        mockito_version = '1.10.19'
 
         // Support
         support_library_version = '25.3.1'
@@ -31,8 +32,14 @@ buildscript {
         // Retrofit
         retrofit_version = '2.3.0'
 
+        // DBFLow
+        dbflow_version = '4.0.2'
+
         // Images
         glide_version = '4.0.0-RC0'
+
+        // Dependencies
+        dagger_version = '2.6.1'
     }
 
     repositories {
@@ -50,6 +57,7 @@ allprojects {
 
     repositories {
         jcenter()
+        maven { url "https://www.jitpack.io" }
     }
 
 }
@@ -57,3 +65,4 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
