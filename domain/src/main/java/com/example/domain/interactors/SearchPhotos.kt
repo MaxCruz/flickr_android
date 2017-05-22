@@ -12,7 +12,7 @@ import java.security.InvalidParameterException
 class SearchPhotos(val listModel: ListContractModel, subscribeOn: Scheduler, observeOn: Scheduler):
         UseCase<SearchPhotos.Input, SearchPhotos.Output>(subscribeOn, observeOn) {
 
-    val PER_PAGE = 10
+    val PER_PAGE = 15
 
     override fun executeUseCase(values: Input?): Observable<Output> {
         if (values == null) return Observable.error(InvalidParameterException())
