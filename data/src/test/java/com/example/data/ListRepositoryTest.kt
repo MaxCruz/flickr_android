@@ -27,7 +27,7 @@ class ListRepositoryTest {
         val observer = repository.getRecentPhotos(1, 1).test()
         observer.awaitTerminalEvent()
         observer.assertNoErrors()
-        observer.assertValue { it is Photo }
+        observer.assertValue { it is List<Photo> }
     }
 
     @Test
@@ -35,7 +35,7 @@ class ListRepositoryTest {
         val observer = repository.searchPhotos(1, 1, "guitar").test()
         observer.awaitTerminalEvent()
         observer.assertNoErrors()
-        observer.assertValue { it is Photo }
+        observer.assertValue { it is List<Photo> }
     }
 
 }
